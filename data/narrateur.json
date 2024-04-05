@@ -1,0 +1,30 @@
+{"epee": {
+  "phrase1": "Fait le.",
+  "phrase2": "Blood for the blood god, skulls for the skull throne.",
+  "phrase3":"Tu sais ce que tu dois faire.",
+  "mauvaise_fin": "Tu ne sait même pas te servir d'une épée...",
+  "mort_apres_combat": "Finalement je m'était trompé, félicitation...",
+  "bonne_fin": "Ce fut un magnifique bain de sang...",
+  "entrain_de_boire": "Allez, un autre!!!",
+  "echec_jeux_a_boire": "Impressionant avec une épée mais pas avec l'alcool!",
+  "succes_jeux_a_boire": "J'abandonne! Ta résistance à l'alcool est impressionante!"
+},
+
+"livre":  {
+  "phrase1": "La plume est plus forte.",
+  "phrase2": "\"La guerre, c'est la guerre des hommes ; la paix, c'est la guerre des idées.\" Victor Hugo",
+  "phrase3": "\"Dans l'immensité de l'océan, même le requin, symbole de puissance et de prédateur, trouve la paix dans la danse harmonieuse des vagues.\" Page 314 Ligne 159",
+  "mauvaise_fin": "Tu ne respecte ni les livres, ni ceux qui t'entourent. Tu me dégoute.",
+  "bonne_fin": "Votre approche pacifique est remarquable, félicitation.",
+  "echec_seduction": "Tu es ridicule!",
+  "bonne_seduction_1": "Je pense comme toi!",
+  "bonne_seduction_2": "Il faudrait qu'on se revoit de temps en temps."
+},
+
+"oeuf" :  {
+  "phrase1": "*bloup bloup* (l'oeuf ne tremble légèrement).",
+  "phrase2": "*Bloup Bloup* (les tremblements se font plus insistants, il semble ressentir le résultat de vos actions).",
+  "phrase3": "*BLOUP BLOUP* (l'oeuf éclora prochainement, espéront que ce qui en sorte soit satisfait de vous).",
+  "mauvaise_fin": "Grrrrrrk!!! (Il semble énervé).",
+  "bonne_fin": "Weeeeeh (Il semble vous avoir adopter comme sa mère)."
+}}
