@@ -19,7 +19,7 @@ class Game:
         self.roomFactory = RoomFactory(self)
         self.text = TextDisplay(self, self.get_db())
         self.currentRoom: Room = TutorialRoom(self)
-        self.player = Player(self, [45, self.currentRoom.ground_collider.top])
+        self.player = Player(self, [45, self.currentRoom.ground_collider.top+58])
 
     def get_db(self):
         with open('./data/narrateur.json', 'r', encoding="utf-8") as file:
