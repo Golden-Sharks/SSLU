@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-
+from app.modules.textDisplay.textDisplay import TextDisplay
 import pygame
 
 

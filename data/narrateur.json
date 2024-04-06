@@ -1,30 +1,73 @@
 {"epee": {
-  "phrase1": "Fait le.",
-  "phrase2": "Blood for the blood god, skulls for the skull throne.",
-  "phrase3":"Tu sais ce que tu dois faire.",
-  "mauvaise_fin": "Tu ne sait même pas te servir d'une épée...",
-  "mort_apres_combat": "Finalement je m'était trompé, félicitation...",
-  "bonne_fin": "Ce fut un magnifique bain de sang...",
-  "entrain_de_boire": "Allez, un autre!!!",
-  "echec_jeux_a_boire": "Impressionant avec une épée mais pas avec l'alcool!",
-  "succes_jeux_a_boire": "J'abandonne! Ta résistance à l'alcool est impressionante!"
+  "1": "Vous avez choisi l'épée.",
+  "2": "Vous avez choisi la voie de la violence."
 },
+  "livre": {
+    "1": "Vous avez choisi le livre.",
+    "2": "Vous avez choisi la voie de la sagesse."
+  },
 
-"livre":  {
-  "phrase1": "La plume est plus forte.",
-  "phrase2": "\"La guerre, c'est la guerre des hommes ; la paix, c'est la guerre des idées.\" Victor Hugo",
-  "phrase3": "\"Dans l'immensité de l'océan, même le requin, symbole de puissance et de prédateur, trouve la paix dans la danse harmonieuse des vagues.\" Page 314 Ligne 159",
-  "mauvaise_fin": "Tu ne respecte ni les livres, ni ceux qui t'entourent. Tu me dégoute.",
-  "bonne_fin": "Votre approche pacifique est remarquable, félicitation.",
-  "echec_seduction": "Tu es ridicule!",
-  "bonne_seduction_1": "Je pense comme toi!",
-  "bonne_seduction_2": "Il faudrait qu'on se revoit de temps en temps."
-},
+  "oeuf" :  {
+    "1": "*bloup bloup* (l'oeuf ne tremble légèrement).",
+    "2": "*Bloup Bloup* (les tremblements se font plus insistants, il semble ressentir le résultat de vos actions).",
+    "3": "*BLOUP BLOUP* (l'oeuf éclora prochainement, espéront que ce qui en sorte soit satisfait de vous).",
+    "4": "Grrrrrrk!!! (Il semble énervé).",
+    "5": "Weeeeeh (Il semble vous avoir adopter comme sa mère)."
+  },
 
-"oeuf" :  {
-  "phrase1": "*bloup bloup* (l'oeuf ne tremble légèrement).",
-  "phrase2": "*Bloup Bloup* (les tremblements se font plus insistants, il semble ressentir le résultat de vos actions).",
-  "phrase3": "*BLOUP BLOUP* (l'oeuf éclora prochainement, espéront que ce qui en sorte soit satisfait de vous).",
-  "mauvaise_fin": "Grrrrrrk!!! (Il semble énervé).",
-  "bonne_fin": "Weeeeeh (Il semble vous avoir adopter comme sa mère)."
-}}
+  "tuto": {
+    "1": "Vous vous réveillez doucement.",
+    "2": "Vous vous trouvez dans une pièce sombre.",
+    "3": "Vous ne savez pas ce qui se passe ici, n'est-ce pas?",
+    "4": "Vous feriez mieux de ne pas rester ici trop longtemps."
+  },
+  "choose": {
+    "1": "Vous avez le choix entre trois destinés.",
+    "2": "Vous pouvez choisir entre une épée, un livre et un oeuf.",
+    "3": "Laquelle choisissez-vous?"
+  },
+  "slime_epee": {
+    "1": "Ce monstre va essayer de te tuer!!!",
+    "2": "Shark! Shark! Shark!",
+    "3": "Tue le! Vite! Tue le!",
+    "4": "Blurp! Blurp! Blurp!",
+    "5": "Tu sens un pouvoir en toi!",
+    "6": "...",
+    "7": "Tu cours à ta perte!"
+  },
+  "slime_livre": {
+    "1": "Vous comprenez ce que le Shirak essaie de vous dire.",
+    "2": "Il semble avoir peur de vous.",
+    "3": "Shirak: Qu'est-ce que vous êtes?",
+    "4": "Shirak: Vous n'êtes pas un monstre? J'espère",
+    "5": "Shirak: Vous avez l'air sympathique.",
+    "6": "(Vous avez de nombreuses questions à lui poser).",
+    "7": "Shirak: Pouvez vous rendre ce livre pour moi. Merci.",
+    "8": "Il s'enfuit en vous laissant le livre.",
+    "9": "Vous avez tuer Shirak.",
+    "10": "Vous avez abîmé le livre (Vous sentez une menace sur vous)."
+  },
+  "mimique_epee": {
+    "1": "(Vous observez une caisse à outils au milieu.)",
+    "2": "Détruit le! Vite! Détruit le!",
+    "3": "Shark? Shark? Shark?",
+    "4": "Tue le! Vite! Tue le!",
+    "5": "(Il fuie vous vous sentez plus fort)",
+    "6": "Shark! Blup! Blup?",
+    "6": "(Il semble vouloir vous dire quelques choses mais vous ne comprenez pas)."
+  },
+  "mimique_livre": {
+    "1": "(Vous observez une caisse à outils au milieu.)",
+    "2": "Un requin marteau sort de celle-ci.",
+    "3": "Bonjour, je suis Patrick le Sharkpentier",
+    "4": "Patrick: Vous avez l'air d'un bon gars.",
+    "5": "Patrick: Je vois que vous avez le livre de Shirak.",
+    "6": "Patrik: Pouvez vous rendre le mien aussi à la bibliothécaire?",
+    "7": "(Il s'enva rapidement en vous laissant le livre)",
+    "8": "(Vous n'avez toujours pas de réponse à vos questions).",
+    "7": "(Vous lancer le livre sur lui)",
+    "8": "Sharkpentier s'enfuit",
+    "9": "Vous avez abîmer le livre (Vous sentez une menace sur vous).",
+    "10": "Quelques feuilles volent du livre (il est gravement endommager)"
+  }
+}
