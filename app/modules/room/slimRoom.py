@@ -21,6 +21,8 @@ class SlimRoom(Room):
             self.monstre_interaction_cooldown -= self.game.clock.get_time()
             if self.monstre_interaction_cooldown < 0:
                 self.monstre_interaction_cooldown = 0
+        for monstre in self.monstres:
+            monstre.update()
 
 
     def draw(self):
