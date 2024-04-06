@@ -14,7 +14,7 @@ class Door(ActionableEntities):
         self.game = game
         self.locked = False
         self.collider = pygame.Rect(self.pos[0], self.pos[1], 50, 50)
-        self.sprite = pygame.image.load('./assets/environnement/Tile/porte_ouverte.png')
+        self.sprite = pygame.image.load('./assets/environnement/Tiles/porte_ouverte.png')
 
     def Interact(self):
         if self.locked:
