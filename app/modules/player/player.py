@@ -46,7 +46,7 @@ class Player:
                 and not self.isJumping):
             self.direction = "saut"
             self.isJumping = True
-            self.velocity[1] = -10
+            self.velocity[1] = -12
         # Apply gravity
         self.velocity[1] += self.gravity
 
