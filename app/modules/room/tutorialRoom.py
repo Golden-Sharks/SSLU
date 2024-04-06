@@ -1,7 +1,6 @@
 import pygame
 
 from app.modules.ActionableEntities.Door import Door
-from app.modules.textDisplay.textDisplay import TextDisplay
 from app.modules.room.room import Room
 
 
@@ -9,9 +8,9 @@ class TutorialRoom(Room):
     def __init__(self, game):
         super().__init__(game)
         self.id = "TutorialRoom"
-        self.background_image = pygame.image.load('./assets/environnement/Map/couloir_hublos.png')
+        self.background_image = pygame.image.load('./assets/environnement/Map/hublo_light2.png')
         self.background_gradiant = pygame.image.load('./assets/environnement/Fonds/water_background.png')
-        self.door = Door(self.game, (950, 345))
+        self.door = Door(self.game, (865, 252))
         self.text = game.text
 
     def draw(self):
@@ -26,4 +25,3 @@ class TutorialRoom(Room):
 
     def next_text(self):
         self.text.move_number()
-

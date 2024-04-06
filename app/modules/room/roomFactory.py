@@ -1,5 +1,7 @@
-from app.modules.room.rootRoom import RootRoom
 import pygame
+
+from app.modules.room.rootRoom import RootRoom
+
 
 class RoomFactory:
     def __init__(self, game):
@@ -9,10 +11,10 @@ class RoomFactory:
         self.transition(False)
         if self.game.currentRoom.id == 'TutorialRoom':
             self.game.currentRoom = RootRoom(self.game)
-        self.game.player.pos = [30, 0]
+        self.game.player.pos = [45, self.game.currentRoom.ground_collider.top]
         self.transition()
 
-    def transition(self,open=True):
+    def transition(self, open=True):
         if open:
             transition_color = (0, 0, 0)  # Adjust color for opening effect
             transition_alpha = 255
