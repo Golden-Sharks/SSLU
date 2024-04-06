@@ -1,6 +1,7 @@
 import pygame
 
 from app.modules.ActionableEntities.Door import Door
+from app.modules.textDisplay.textDisplay import TextDisplay
 from app.modules.room.room import Room
 
 
@@ -10,7 +11,7 @@ class TutorialRoom(Room):
         self.id = "TutorialRoom"
         self.background_image = pygame.image.load('./assets/environnement/Map/couloir_hublos.png')
         self.background_gradiant = pygame.image.load('./assets/environnement/Fonds/water_background.png')
-        self.door = Door(self.game, (950, 450))
+        self.door = Door(self.game, (950, 345))
         self.text = game.text
 
     def draw(self):
