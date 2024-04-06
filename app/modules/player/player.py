@@ -31,7 +31,7 @@ class Player:
         # Limit vertical movement at the bottom
         if self.collider.bottom >= self.game.currentRoom.ground_collider.top:
             if not self.isJumping:
-                self.pos[1] = 470
+                self.pos[1] = self.game.currentRoom.ground_collider.top - 30
                 self.velocity[1] = 0  # Reset vertical velocity when hitting the ground
             self.isJumping = False
 
