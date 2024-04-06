@@ -41,7 +41,8 @@ class Player:
 
         if keys[pygame.K_e]:
             self.game.currentRoom.check_for_interaction()
-
+        if keys[pygame.K_a]:
+            self.game.currentRoom.next_text()
         # Update collider position to match player position
         self.collider.x = self.pos[0] - 30
         self.collider.y = self.pos[1] - 30
