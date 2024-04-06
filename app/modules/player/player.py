@@ -21,6 +21,7 @@ class Player:
         }
         self.animation_frame_index = 0
         self.remaining_life = 10
+        self.status = "Neutre"
 
     def update(self, keys):
         self.cooldown_timer.tick()
@@ -64,7 +65,8 @@ class Player:
         if keys[pygame.K_e]:
             self.game.currentRoom.check_for_interaction()
         if keys[pygame.K_a]:
-            self.game.currentRoom.next_text()
+            self.status = "Attaque"
+            self.game.currentRoom.check_for_interaction()
         # Update collider position to match player position
         self.collider.x = self.pos[0]
         self.collider.y = self.pos[1]

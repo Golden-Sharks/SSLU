@@ -1,16 +1,19 @@
 import pygame
 
 from app.modules.room.rootRoom import RootRoom
-
+from app.modules.room.slimRoom import SlimRoom
 
 class RoomFactory:
     def __init__(self, game):
         self.game = game
 
     def switch_room(self):
+        self.game.player.status="Neutre"
         self.transition(False)
         if self.game.currentRoom.id == 'TutorialRoom':
             self.game.currentRoom = RootRoom(self.game)
+        elif self.game.currentRoom.id == 'RootRoom':
+            self.game.currentRoom = SlimRoom(self.game)
         self.game.player.pos = [45, self.game.currentRoom.ground_collider.top]
         self.transition()
 
