@@ -1,6 +1,9 @@
 import pygame
 from app.modules.player.player import Player
 from app.modules.ActionableEntities.Door import Door
+from app.modules.room.room import Room
+from app.modules.room.roomFactory import RoomFactory
+
 
 class Game:
     def __init__(self):
@@ -11,10 +14,13 @@ class Game:
         self.running = True
         self.doors = [Door(self.screen, "Door 1", False, False, (950, 550))]
         self.player = Player(self.screen, (30, 570))
+        self.roomFactory = RoomFactory(self)
+        self.currentRoom: Room = None
 
-    def update(self,keys):
+    def update(self, keys):
         self.doors[0].draw()
-        if self.player.pos_x<self.doors[0].pos[0]+50 and self.player.pos_x>self.doors[0].pos[0]-50 and self.player.pos_y<self.doors[0].pos[1]+100 and self.player.pos_y>self.doors[0].pos[1]-100:
+        if (self.doors[0].pos[0] + 50 > self.player.pos_x > self.doors[0].pos[0] - 50
+                and self.doors[0].pos[1] + 100 > self.player.pos_y > self.doors[0].pos[1] - 100):
             if keys[pygame.K_e]:
                 self.background = self.doors[0].Interact()
                 self.player.pos_x = 30
@@ -22,6 +28,7 @@ class Game:
         self.player.update(keys)
         pygame.display.update()
         self.clock.tick(60)
+
     def run(self):
         # Changing surface color
         pygame.display.flip()
