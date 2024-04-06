@@ -1,6 +1,7 @@
 import pygame
 
 from app.modules.ActionableEntities.Door import Door
+from app.modules.textDisplay.textDisplay import TextDisplay
 from app.modules.room.room import Room
 
 
@@ -20,3 +21,7 @@ class TutorialRoom(Room):
     def check_for_interaction(self):
         if self.game.player.collider.colliderect(self.door.collider):
             self.game.roomFactory.switch_room()
+
+    def next_text(self):
+        self.text.move_number()
+
