@@ -14,6 +14,7 @@ class Door(ActionableEntities):
         self.game = game
         self.locked = False
         self.collider = pygame.Rect(self.pos[0], self.pos[1], 50, 50)
+        self.sprite = pygame.image.load('./assets/environnement/Tile/porte_ouverte.png')
 
     def Interact(self):
         if self.locked:
@@ -23,5 +24,6 @@ class Door(ActionableEntities):
             self.game.roomFactory.switch_room()
 
     def draw(self):
+        #self.game.screen.blit(self.sprite, (0, 0))
         pg.draw.rect(self.game.screen, (0, 0, 0), (self.pos[0], self.pos[1], 50, 50))
         pygame.draw.rect(self.game.screen, (255, 0, 0), self.collider, 5)
