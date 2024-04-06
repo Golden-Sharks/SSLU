@@ -1,5 +1,4 @@
 import pygame
-from app.modules.room.room import Room
 
 
 class Player:
@@ -10,8 +9,9 @@ class Player:
         self.velocity = [0, 0]  # Initialize velocity for smooth movement
         self.speed = 5
         self.gravity = 0.5  # Acceleration due to gravity
-        self.collider = pygame.Rect(self.pos[0]-30, self.pos[1]-30, 60, 60)
+        self.collider = pygame.Rect(self.pos[0] - 30, self.pos[1] - 30, 60, 60)
         self.isJumping = False
+        self.has_item = False
 
     def update(self, keys):
         # Handle horizontal movement with QD SPACE controls
