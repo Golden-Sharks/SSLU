@@ -16,4 +16,4 @@ class RootRoom(Room):
 
     def check_for_interaction(self):
         if self.game.player.collider.colliderect(self.door.collider):
-            self.game.roomFactory.switchRoom()
+            self.game.roomFactory.switch_room()
