@@ -8,6 +8,8 @@ class RootRoom(Room):
     def __init__(self, game):
         super().__init__(game)
         self.id = 'RootRoom'
+        self.background_image = pygame.image.load('./assets/environnement/Map/couloir_hublos.png')
+        self.background_gradiant = pygame.image.load('./assets/environnement/Fonds/water_background.png')
         self.door = Door(self.game, (950, 450))
         self.text = game.text
 
