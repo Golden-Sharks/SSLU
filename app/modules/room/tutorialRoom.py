@@ -11,10 +11,12 @@ class TutorialRoom(Room):
         self.background_image = pygame.image.load('./assets/environnement/Map/couloir_hublos.png')
         self.background_gradiant = pygame.image.load('./assets/environnement/Fonds/water_background.png')
         self.door = Door(self.game, (950, 345))
+        self.text = game.text
 
     def draw(self):
         self.game.screen.blit(self.background_gradiant, (0, 0))
         self.game.screen.blit(self.background_image, (0, 0))
+        self.text.display_txt()
         self.door.draw()
 
     def check_for_interaction(self):
