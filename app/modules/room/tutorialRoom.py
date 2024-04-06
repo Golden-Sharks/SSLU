@@ -8,14 +8,20 @@ class TutorialRoom(Room):
     def __init__(self, game):
         super().__init__(game)
         self.id = "TutorialRoom"
-        self.door = Door(self.game, (950, 450))
+        self.background_image = pygame.image.load('./assets/environnement/Map/hublo_light2.png')
+        self.background_gradiant = pygame.image.load('./assets/environnement/Fonds/water_background.png')
+        self.door = Door(self.game, (865, 252))
+        self.text = game.text
 
     def draw(self):
-        pygame.draw.rect(self.game.screen, (0, 255, 0), self.ground_collider)
+        self.game.screen.blit(self.background_gradiant, (0, 0))
+        self.game.screen.blit(self.background_image, (0, 0))
+        self.text.display_txt()
         self.door.draw()
 
     def check_for_interaction(self):
         if self.game.player.collider.colliderect(self.door.collider):
             self.game.roomFactory.switch_room()
 
-
+    def next_text(self):
+        self.text.move_number()

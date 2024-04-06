@@ -25,6 +25,7 @@ imports:
  &#8226;   <a href="#app.modules.room.room">app.modules.room.room</a>
  &#8226;   <a href="#app.modules.room.roomFactory">app.modules.room.roomFactory</a>
  &#8226;   <a href="#app.modules.room.tutorialRoom">app.modules.room.tutorialRoom</a>
+ &#8226;   <a href="#app.modules.textDisplay.textDisplay">app.modules.textDisplay.textDisplay</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#collections.abc">collections.abc</a>
@@ -156,6 +157,7 @@ imports:
  &#8226;   <a href="#genericpath">genericpath</a>
  &#8226;   <a href="#heapq">heapq</a>
  &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#json">json</a>
  &#8226;   <a href="#keyword">keyword</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
@@ -707,6 +709,23 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="_json"></a>
+  <tt>_json</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
+imports:
+    <a href="#json.decoder">json.decoder</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#json.decoder">json.decoder</a>
+ &#8226;   <a href="#json.encoder">json.encoder</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="_locale"></a>
   <tt>_locale</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
@@ -1244,7 +1263,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#_collections_abc">_collections_abc</a>
- &#8226;   <a href="#app.modules.ActionableEntities.ActionableEntities">app.modules.ActionableEntities.ActionableEntities</a>
+ &#8226;   <a href="#app.modules.ActionableEntities.actionableEntities">app.modules.ActionableEntities.actionableEntities</a>
  &#8226;   <a href="#app.modules.room.room">app.modules.room.room</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
@@ -1297,6 +1316,7 @@ imported by:
     <a href="#app.modules.ActionableEntities">app.modules.ActionableEntities</a>
  &#8226;   <a href="#app.modules.player">app.modules.player</a>
  &#8226;   <a href="#app.modules.room">app.modules.room</a>
+ &#8226;   <a href="#app.modules.textDisplay">app.modules.textDisplay</a>
 
   </div>
 
@@ -1312,25 +1332,9 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#app.modules.ActionableEntities.ActionableEntities">app.modules.ActionableEntities.ActionableEntities</a>
- &#8226;   <a href="#app.modules.ActionableEntities.Door">app.modules.ActionableEntities.Door</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="app.modules.ActionableEntities.ActionableEntities"></a>
-  <a target="code" href="///D:/Dev/gamejam2024/app/modules/ActionableEntities/ActionableEntities.py" type="text/plain"><tt>app.modules.ActionableEntities.ActionableEntities</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#abc">abc</a>
- &#8226;   <a href="#app.modules.ActionableEntities">app.modules.ActionableEntities</a>
-
-  </div>
-  <div class="import">
-imported by:
     <a href="#app.modules.ActionableEntities.Door">app.modules.ActionableEntities.Door</a>
+ &#8226;   <a href="#app.modules.ActionableEntities.actionableEntities">app.modules.ActionableEntities.actionableEntities</a>
+ &#8226;   <a href="#app.modules.ActionableEntities.piedestal">app.modules.ActionableEntities.piedestal</a>
 
   </div>
 
@@ -1342,7 +1346,7 @@ imported by:
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#app.modules.ActionableEntities">app.modules.ActionableEntities</a>
- &#8226;   <a href="#app.modules.ActionableEntities.ActionableEntities">app.modules.ActionableEntities.ActionableEntities</a>
+ &#8226;   <a href="#app.modules.ActionableEntities.actionableEntities">app.modules.ActionableEntities.actionableEntities</a>
  &#8226;   <a href="#pygame">pygame</a>
 
   </div>
@@ -1350,6 +1354,42 @@ imports:
 imported by:
     <a href="#app.modules.room.rootRoom">app.modules.room.rootRoom</a>
  &#8226;   <a href="#app.modules.room.tutorialRoom">app.modules.room.tutorialRoom</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="app.modules.ActionableEntities.actionableEntities"></a>
+  <a target="code" href="///D:/Dev/gamejam2024/app/modules/ActionableEntities/actionableEntities.py" type="text/plain"><tt>app.modules.ActionableEntities.actionableEntities</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#app.modules.ActionableEntities">app.modules.ActionableEntities</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#app.modules.ActionableEntities.Door">app.modules.ActionableEntities.Door</a>
+ &#8226;   <a href="#app.modules.ActionableEntities.piedestal">app.modules.ActionableEntities.piedestal</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="app.modules.ActionableEntities.piedestal"></a>
+  <a target="code" href="///D:/Dev/gamejam2024/app/modules/ActionableEntities/piedestal.py" type="text/plain"><tt>app.modules.ActionableEntities.piedestal</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#app.modules.ActionableEntities">app.modules.ActionableEntities</a>
+ &#8226;   <a href="#app.modules.ActionableEntities.actionableEntities">app.modules.ActionableEntities.actionableEntities</a>
+ &#8226;   <a href="#pygame">pygame</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#app.modules.room.rootRoom">app.modules.room.rootRoom</a>
 
   </div>
 
@@ -1377,7 +1417,6 @@ imported by:
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#app.modules.player">app.modules.player</a>
- &#8226;   <a href="#app.modules.room.room">app.modules.room.room</a>
  &#8226;   <a href="#pygame">pygame</a>
 
   </div>
@@ -1415,13 +1454,13 @@ imported by:
 imports:
     <a href="#abc">abc</a>
  &#8226;   <a href="#app.modules.room">app.modules.room</a>
+ &#8226;   <a href="#app.modules.textDisplay.textDisplay">app.modules.textDisplay.textDisplay</a>
  &#8226;   <a href="#pygame">pygame</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#app.modules.player.player">app.modules.player.player</a>
- &#8226;   <a href="#app.modules.room.rootRoom">app.modules.room.rootRoom</a>
+    <a href="#app.modules.room.rootRoom">app.modules.room.rootRoom</a>
  &#8226;   <a href="#app.modules.room.tutorialRoom">app.modules.room.tutorialRoom</a>
  &#8226;   <a href="#game.py">game.py</a>
 
@@ -1436,6 +1475,7 @@ imported by:
 imports:
     <a href="#app.modules.room">app.modules.room</a>
  &#8226;   <a href="#app.modules.room.rootRoom">app.modules.room.rootRoom</a>
+ &#8226;   <a href="#pygame">pygame</a>
 
   </div>
   <div class="import">
@@ -1452,6 +1492,7 @@ imported by:
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#app.modules.ActionableEntities.Door">app.modules.ActionableEntities.Door</a>
+ &#8226;   <a href="#app.modules.ActionableEntities.piedestal">app.modules.ActionableEntities.piedestal</a>
  &#8226;   <a href="#app.modules.room">app.modules.room</a>
  &#8226;   <a href="#app.modules.room.room">app.modules.room.room</a>
  &#8226;   <a href="#pygame">pygame</a>
@@ -1479,6 +1520,41 @@ imports:
   <div class="import">
 imported by:
     <a href="#game.py">game.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="app.modules.textDisplay"></a>
+  <a target="code" href="///D:/Dev/gamejam2024/app/modules/textDisplay/__init__.py" type="text/plain"><tt>app.modules.textDisplay</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#app.modules">app.modules</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#app.modules.textDisplay.textDisplay">app.modules.textDisplay.textDisplay</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="app.modules.textDisplay.textDisplay"></a>
+  <a target="code" href="///D:/Dev/gamejam2024/app/modules/textDisplay/textDisplay.py" type="text/plain"><tt>app.modules.textDisplay.textDisplay</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#app.modules.textDisplay">app.modules.textDisplay</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#pygame">pygame</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#app.modules.room.room">app.modules.room.room</a>
+ &#8226;   <a href="#game.py">game.py</a>
 
   </div>
 
@@ -1834,6 +1910,7 @@ imported by:
  &#8226;   <a href="#encodings.uu_codec">encodings.uu_codec</a>
  &#8226;   <a href="#encodings.zlib_codec">encodings.zlib_codec</a>
  &#8226;   <a href="#game.py">game.py</a>
+ &#8226;   <a href="#json">json</a>
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#plistlib">plistlib</a>
  &#8226;   <a href="#tokenize">tokenize</a>
@@ -6363,6 +6440,86 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="json"></a>
+  <a target="code" href="///C:/Users/diman/AppData/Local/Programs/Python/Python312/Lib/json/__init__.py" type="text/plain"><tt>json</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#codecs">codecs</a>
+ &#8226;   <a href="#json.decoder">json.decoder</a>
+ &#8226;   <a href="#json.encoder">json.encoder</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#app.modules.textDisplay.textDisplay">app.modules.textDisplay.textDisplay</a>
+ &#8226;   <a href="#game.py">game.py</a>
+ &#8226;   <a href="#json.decoder">json.decoder</a>
+ &#8226;   <a href="#json.encoder">json.encoder</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="json.decoder"></a>
+  <a target="code" href="///C:/Users/diman/AppData/Local/Programs/Python/Python312/Lib/json/decoder.py" type="text/plain"><tt>json.decoder</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_json">_json</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
+ &#8226;   <a href="#re">re</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#_json">_json</a>
+ &#8226;   <a href="#json">json</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="json.encoder"></a>
+  <a target="code" href="///C:/Users/diman/AppData/Local/Programs/Python/Python312/Lib/json/encoder.py" type="text/plain"><tt>json.encoder</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_json">_json</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#re">re</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#json">json</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="json.scanner"></a>
+  <a target="code" href="///C:/Users/diman/AppData/Local/Programs/Python/Python312/Lib/json/scanner.py" type="text/plain"><tt>json.scanner</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_json">_json</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#re">re</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#json">json</a>
+ &#8226;   <a href="#json.decoder">json.decoder</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="keyword"></a>
   <a target="code" href="///C:/Users/diman/AppData/Local/Programs/Python/Python312/Lib/keyword.py" type="text/plain"><tt>keyword</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -8677,10 +8834,13 @@ imports:
   <div class="import">
 imported by:
     <a href="#app.modules.ActionableEntities.Door">app.modules.ActionableEntities.Door</a>
+ &#8226;   <a href="#app.modules.ActionableEntities.piedestal">app.modules.ActionableEntities.piedestal</a>
  &#8226;   <a href="#app.modules.player.player">app.modules.player.player</a>
  &#8226;   <a href="#app.modules.room.room">app.modules.room.room</a>
+ &#8226;   <a href="#app.modules.room.roomFactory">app.modules.room.roomFactory</a>
  &#8226;   <a href="#app.modules.room.rootRoom">app.modules.room.rootRoom</a>
  &#8226;   <a href="#app.modules.room.tutorialRoom">app.modules.room.tutorialRoom</a>
+ &#8226;   <a href="#app.modules.textDisplay.textDisplay">app.modules.textDisplay.textDisplay</a>
  &#8226;   <a href="#game.py">game.py</a>
  &#8226;   <a href="#pygame._freetype">pygame._freetype</a>
  &#8226;   <a href="#pygame.base">pygame.base</a>
@@ -9529,6 +9689,9 @@ imported by:
  &#8226;   <a href="#importlib.metadata._text">importlib.metadata._text</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#ipaddress">ipaddress</a>
+ &#8226;   <a href="#json.decoder">json.decoder</a>
+ &#8226;   <a href="#json.encoder">json.encoder</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#packaging._manylinux">packaging._manylinux</a>

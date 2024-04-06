@@ -1,8 +1,12 @@
+import json
+
 import pygame
+
 from app.modules.player.player import Player
 from app.modules.room.room import Room
 from app.modules.room.roomFactory import RoomFactory
 from app.modules.room.tutorialRoom import TutorialRoom
+from app.modules.textDisplay.textDisplay import TextDisplay
 
 
 class Game:
@@ -12,9 +16,14 @@ class Game:
         self.screen = pygame.display.set_mode((1000, 600))
         self.background = (255, 255, 255)
         self.running = True
-        self.player = Player(self, [30, 0])
         self.roomFactory = RoomFactory(self)
+        self.text = TextDisplay(self, self.get_db())
         self.currentRoom: Room = TutorialRoom(self)
+        self.player = Player(self, [45, self.currentRoom.ground_collider.top])
+
+    def get_db(self):
+        with open('./data/narrateur.json', 'r', encoding="utf-8") as file:
+            return json.load(file)
 
     def update(self, keys):
         self.player.update(keys)
@@ -29,6 +38,7 @@ class Game:
     def run(self):
         # Changing surface color
         pygame.display.flip()
+
         while self.running:
             self.draw()
             keys = pygame.key.get_pressed()
