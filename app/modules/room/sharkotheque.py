@@ -21,7 +21,6 @@ class Sharkotheque(Room):
         self.game.screen.blit(self.background_gradiant, (0, 0))
         self.game.screen.blit(self.background_image, (0, 0))
         self.boss.draw()
-        pygame.draw.rect(self.game.screen, (255, 0, 0), self.detector, 5)
         # self.text.display_txt()
         # TODO: Dialogues boss
 
@@ -30,9 +29,15 @@ class Sharkotheque(Room):
 
     def update(self):
         if not self.has_played_animation and self.detector.colliderect(self.game.player.collider):
-            self.start_animation()
+            self.start_fight_animation()
             self.has_played_animation = True
+            self.boss.is_attacking = True
+            self.music_player.play('./data/musics/sharkotequaire.mp3')
+        self.boss.update()
 
-    def start_animation(self):
+    def start_fight_animation(self):
         print("ANIMATION !")
-        self.game.player.
+        self.game.player.can_move = False
+        # TODO: mettre le dialogue mauvais avant le tp
+        self.boss.pos[1] = 20
+        self.game.player.can_move = True
