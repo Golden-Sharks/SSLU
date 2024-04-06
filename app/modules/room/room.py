@@ -1,6 +1,17 @@
 from abc import ABC, abstractmethod
 
-class Room(ABC) :
+import pygame
+
+
+class Room(ABC):
+    def __init__(self, game):
+        self.game = game
+        self.ground_collider = pygame.Rect(0, 500, 1000, 100)
+
     @abstractmethod
     def draw(self):
+        pass
+
+    @abstractmethod
+    def check_for_interaction(self):
         pass

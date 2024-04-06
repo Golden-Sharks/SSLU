@@ -1,8 +1,8 @@
 import pygame
 from app.modules.player.player import Player
-from app.modules.ActionableEntities.Door import Door
 from app.modules.room.room import Room
 from app.modules.room.roomFactory import RoomFactory
+from app.modules.room.tutorialRoom import TutorialRoom
 
 
 class Game:
@@ -12,28 +12,25 @@ class Game:
         self.screen = pygame.display.set_mode((1000, 600))
         self.background = (255, 255, 255)
         self.running = True
-        self.doors = [Door(self.screen, "Door 1", False, False, (950, 550))]
-        self.player = Player(self.screen, (30, 570))
+        self.player = Player(self, [30, 0])
         self.roomFactory = RoomFactory(self)
-        self.currentRoom: Room = None
+        self.currentRoom: Room = TutorialRoom(self)
 
     def update(self, keys):
-        self.doors[0].draw()
-        if (self.doors[0].pos[0] + 50 > self.player.pos_x > self.doors[0].pos[0] - 50
-                and self.doors[0].pos[1] + 100 > self.player.pos_y > self.doors[0].pos[1] - 100):
-            if keys[pygame.K_e]:
-                self.background = self.doors[0].Interact()
-                self.player.pos_x = 30
-                self.player.pos_y = 570
         self.player.update(keys)
-        pygame.display.update()
         self.clock.tick(60)
+
+    def draw(self):
+        self.screen.fill(self.background)
+        self.currentRoom.draw()
+        self.player.draw()
+        pygame.display.update()
 
     def run(self):
         # Changing surface color
         pygame.display.flip()
         while self.running:
-            self.screen.fill(self.background)
+            self.draw()
             keys = pygame.key.get_pressed()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
