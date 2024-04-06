@@ -18,7 +18,6 @@ class Door(ActionableEntities):
     def Interact(self):
         if self.locked:
             return self.room_init
-            print("The door is locked.")
         else:
             self.game.roomFactory.switch_room()
 
