@@ -14,6 +14,7 @@ class Player:
         self.collider = pygame.Rect(self.pos[0], self.pos[1], 66, 116)
         self.isJumping = False
         self.has_item = False
+        self.item = None
         self.direction = "immobile"
         self.cooldown_timer = pygame.time.Clock()
         self.animation = {
@@ -71,7 +72,7 @@ class Player:
             self.game.currentRoom.check_for_interaction()
         if keys[pygame.K_a]:
             self.status = "Attaque"
-            self.game.currentRoom.check_for_interaction()
+            self.game.currentRoom.attack_interaction()
         # Update collider position to match player position
         self.collider.x = self.pos[0]
         self.collider.y = self.pos[1]

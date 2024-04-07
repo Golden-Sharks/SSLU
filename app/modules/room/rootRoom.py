@@ -11,10 +11,11 @@ class RootRoom(Room):
         self.id = 'RootRoom'
         self.background_image = pygame.image.load('./assets/environnement/Map/salle_objets.png')
         self.background_gradiant = pygame.image.load('./assets/environnement/Fonds/water_background.png')
-        self.piedestal_sword = Piedestal(self.game, [240, 252], './assets/items/sharksword.png')
-        self.piedestal_book = Piedestal(self.game, [435, 252], './assets/items/sharkbook.png')
-        self.piedestal_egg = Piedestal(self.game, [625, 252], './assets/items/sharkegg.png')
-        self.piedestals = [self.piedestal_sword, self.piedestal_book, self.piedestal_egg]
+        self.piedestal_sword = Piedestal(self.game, [240, 252], './assets/items/sharksword.png',0)
+        self.piedestal_book = Piedestal(self.game, [435, 252], './assets/items/sharkbook.png',1)
+        #self.piedestal_egg = Piedestal(self.game, [625, 252], './assets/items/sharkegg.png',2)
+        #self.piedestals = [self.piedestal_sword, self.piedestal_book, self.piedestal_egg]
+        self.piedestals = [self.piedestal_sword, self.piedestal_book]
         self.door = Door(self.game, (865, 252), True)
         self.text = game.text
 
@@ -38,4 +39,7 @@ class RootRoom(Room):
         self.text.move_number()
 
     def update(self):
+        self.text.update()
+
+    def attack_interaction(self):
         pass

@@ -39,6 +39,8 @@ class Sharkotheque(Room):
             self.music_player.play('./data/musics/sharkotequaire.mp3')
         self.boss.update()
 
+    def attack_interaction(self):
+        pass
     def start_fight_animation(self):
         print("ANIMATION !")
         self.game.player.can_move = False
