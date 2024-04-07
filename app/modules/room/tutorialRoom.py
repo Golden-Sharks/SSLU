@@ -13,6 +13,8 @@ class TutorialRoom(Room):
         self.door = Door(self.game, (865, 252))
         self.text = game.text
 
+    def update(self):
+        self.text.update()
     def draw(self):
         self.game.screen.blit(self.background_gradiant, (0, 0))
         self.game.screen.blit(self.background_image, (0, 0))
@@ -25,3 +27,6 @@ class TutorialRoom(Room):
 
     def next_text(self):
         self.text.move_number()
+
+    def attack_interaction(self):
+        pass

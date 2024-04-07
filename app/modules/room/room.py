@@ -15,3 +15,10 @@ class Room(ABC):
     @abstractmethod
     def check_for_interaction(self):
         pass
+
+    @abstractmethod
+    def update(self):
+        pass
+
+    def attack_interaction(self):
+        pass

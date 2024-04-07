@@ -1,6 +1,9 @@
 import pygame
 
 from app.modules.room.rootRoom import RootRoom
+from app.modules.room.sharkotheque import Sharkotheque
+from app.modules.room.skarkBar import Sharkbar
+from app.modules.room.slimRoom import SlimRoom
 
 
 class RoomFactory:
@@ -11,6 +14,13 @@ class RoomFactory:
         self.transition(False)
         if self.game.currentRoom.id == 'TutorialRoom':
             self.game.currentRoom = RootRoom(self.game)
+        elif self.game.currentRoom.id == 'RootRoom':
+            self.game.currentRoom = SlimRoom(self.game)
+        elif self.game.currentRoom.id == 'Slimroom':
+            if self.game.player.item == 0:
+                self.game.currentRoom = Sharkbar(self.game)
+            else:
+                self.game.currentRoom = Sharkotheque(self.game)
         self.game.player.pos = [45, self.game.currentRoom.ground_collider.top]
         self.transition()
 
