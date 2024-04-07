@@ -53,9 +53,9 @@ class Game:
     def run(self):
         pygame.display.flip()
         isInMenu = True
+        self.drawMenuScreen()
 
         while isInMenu:
-            self.drawMenuScreen()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
