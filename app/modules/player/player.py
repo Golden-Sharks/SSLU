@@ -20,6 +20,7 @@ class Player:
             "saut": ["sprite_3.png","sprite_3.png"],
         }
         self.animation_frame_index = 0
+        self.remaining_life = 10
 
     def update(self, keys):
         self.cooldown_timer.tick()
@@ -75,3 +76,11 @@ class Player:
             scaled_image = pygame.transform.flip(scaled_image, True, False)
         self.game.screen.blit(scaled_image, self.pos)
         #pygame.draw.rect(self.game.screen, (255, 0, 0), self.collider, 5)
+        pygame.draw.rect(self.game.screen, (255, 0, 0), (0, 0, self.remaining_life * 20, 20))
+
+
+    def take_damage(self, damage):
+        self.remaining_life -= damage
+        if self.remaining_life <= 0:
+            self.game.game_over()
+        print("Player took damage, remaining life: ", self.remaining_life)
