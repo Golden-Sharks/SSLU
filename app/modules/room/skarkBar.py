@@ -35,6 +35,7 @@ class Sharkbar(Room):
             self.start_fight_animation()
             self.has_played_animation = True
             self.boss.first_attack_time = time.time()
+            self.game.music_player.stop()
             self.music_player.play('./data/musics/sharkeneger.mp3')
         self.boss.update()
 
