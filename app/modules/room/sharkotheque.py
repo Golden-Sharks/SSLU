@@ -20,6 +20,7 @@ class Sharkotheque(Room):
     def draw(self):
         self.game.screen.blit(self.background_gradiant, (0, 0))
         self.game.screen.blit(self.background_image, (0, 0))
+        pygame.draw.rect(self.game.screen, (255, 0, 0), self.detector, 5)
         self.boss.draw()
         # self.text.display_txt()
         # TODO: Dialogues boss
