@@ -3,6 +3,7 @@ import sys
 
 import pygame
 
+from app.modules.musicPlayer.musicPlayer import MusicPlayer
 from app.modules.player.player import Player
 from app.modules.room.room import Room
 from app.modules.room.roomFactory import RoomFactory
@@ -24,6 +25,7 @@ class Game:
         self.image = pygame.transform.scale(pygame.image.load("assets/logo_goldenSharks.png"), (200, 200))
         self.isGameOver = False
         self.hasWon = False
+        self.music_player = MusicPlayer()
 
     def get_db(self):
         with open('./data/narrateur.json', 'r', encoding="utf-8") as file:
@@ -55,7 +57,7 @@ class Game:
         pygame.display.flip()
         isInMenu = True
         self.draw_menu_screen()
-
+        self.music_player.play('./data/musics/ecran.mp3')
         while isInMenu:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -71,7 +73,8 @@ class Game:
                         self.game_over()
                         isInMenu = False
                         self.running = False
-
+        self.music_player.stop()
+        self.music_player.play('./data/musics/main_loop.mp3')
         while self.running:
             self.draw()
             keys = pygame.key.get_pressed()
@@ -90,6 +93,7 @@ class Game:
         if texte == '':
             pygame.quit()
             sys.exit()
+        self.music_player.play('./data/musics/ecran.mp3')
         self.screen.fill((50, 50, 50))
         text_surface_title = pygame.font.Font(None, 50).render(texte, False, (15, 5, 107))
         self.screen.blit(text_surface_title, (350, 300))

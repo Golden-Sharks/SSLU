@@ -36,6 +36,7 @@ class Sharkotheque(Room):
             self.has_played_animation = True
             self.boss.is_attacking = True
             self.boss.first_attack_time = time.time()
+            self.game.music_player.stop()
             self.music_player.play('./data/musics/sharkotequaire.mp3')
         self.boss.update()
         if self.has_played_animation and not self.boss.is_attacking:
