@@ -6,7 +6,7 @@ class Shirak(Monstre):
         super().__init__(game, pos, 102, 58)
         self.current_image = pygame.image.load('./assets/environnement/Animations/shirak/sprite_0.png')
         self.life = 3
-        self.interaction_zone_slime = pygame.Rect(pos[0]-55, pos[1]-60, 200, 200)  # Rectangle de base
+        self.interaction_zone_slime = pygame.Rect(pos[0]-55, pos[1]-60, 100, 100)  # Rectangle de base
         self.interaction_zone_player = pygame.Rect(pos[0]-55, pos[1]-60, 200, 200)  # Rectangle de base
         self.following = False  # Flag to track following state
         self.damage_cooldown = 0
@@ -16,7 +16,7 @@ class Shirak(Monstre):
             scaled_image=pygame.transform.flip(scaled_image, True, False)
             self.game.screen.blit(scaled_image, self.pos)
             # Optionally draw interaction zone for debugging (comment out for final version)
-            pygame.draw.circle(self.game.screen, (255, 0, 0), self.interaction_zone_slime.center, 85, 2)
+            pygame.draw.circle(self.game.screen, (255, 0, 0), self.interaction_zone_slime.center, 65, 2)
             pygame.draw.circle(self.game.screen, (0, 255, 0), self.interaction_zone_player.center, 155, 2)
 
     def interact(self,status):
@@ -39,7 +39,7 @@ class Shirak(Monstre):
             elif player_center_x < slime_center_x:
                 self.pos[0] -= min(speed, slime_center_x - player_center_x)  # Move left
 
-            if self.game.player.collider.colliderect(self.interaction_zone_player):
+            if self.game.player.collider.colliderect(self.interaction_zone_slime):
                 self.game.player.take_damage(1)
             # Update interaction zones based on new position
             self.interaction_zone_slime[0] = self.pos[0] - 55
