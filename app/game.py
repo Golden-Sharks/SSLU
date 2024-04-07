@@ -19,7 +19,7 @@ class Game:
         self.running = True
         self.roomFactory = RoomFactory(self)
         self.text = TextDisplay(self, self.get_db())
-        self.currentRoom: Room = SlimRoom(self)
+        self.currentRoom: Room = TutorialRoom(self)
         self.player = Player(self, [45, self.currentRoom.ground_collider.top+58])
         self.image = pygame.transform.scale(pygame.image.load("assets/logo_goldenSharks.png"), (200, 200))
 
@@ -28,8 +28,8 @@ class Game:
             return json.load(file)
 
     def update(self, keys):
-        self.player.update(keys)
         self.currentRoom.update()
+        self.player.update(keys)
         self.clock.tick(60)
 
     def draw(self):
