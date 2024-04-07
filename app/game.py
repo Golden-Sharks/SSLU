@@ -6,7 +6,7 @@ import pygame
 from app.modules.player.player import Player
 from app.modules.room.room import Room
 from app.modules.room.roomFactory import RoomFactory
-from app.modules.room.tutorialRoom import TutorialRoom
+from app.modules.room.sharkotheque import Sharkotheque
 from app.modules.textDisplay.textDisplay import TextDisplay
 
 
@@ -19,7 +19,7 @@ class Game:
         self.running = True
         self.roomFactory = RoomFactory(self)
         self.text = TextDisplay(self, self.get_db())
-        self.currentRoom: Room = TutorialRoom(self)
+        self.currentRoom: Room = Sharkotheque(self)
         self.player = Player(self, [45, self.currentRoom.ground_collider.top + 58])
         self.image = pygame.transform.scale(pygame.image.load("assets/logo_goldenSharks.png"), (200, 200))
         self.isGameOver = False
