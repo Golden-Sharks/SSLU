@@ -1,3 +1,5 @@
+import time
+
 import pygame
 
 
@@ -23,6 +25,7 @@ class Player:
         self.can_move = True
         self.remaining_life = 10
         self.status = "Neutre"
+        self.last_damage = 0
 
     def update(self, keys):
         if self.can_move:
@@ -84,7 +87,9 @@ class Player:
         # pygame.draw.rect(self.game.screen, (255, 0, 0), self.collider, 5)
 
     def take_damage(self, damage):
-        self.remaining_life -= damage
-        if self.remaining_life <= 0:
-            self.game.game_over()
-        print("Player took damage, remaining life: ", self.remaining_life)
+        if time.time() - self.last_damage > 2:
+            self.last_damage = time.time()
+            self.remaining_life -= damage
+            if self.remaining_life <= 0:
+                self.game.game_over()
+            print("Player took damage, remaining life: ", self.remaining_life)
