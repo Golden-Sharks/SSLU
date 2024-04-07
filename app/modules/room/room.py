@@ -15,3 +15,7 @@ class Room(ABC):
     @abstractmethod
     def check_for_interaction(self):
         pass
+
+    @abstractmethod
+    def update(self):
+        pass

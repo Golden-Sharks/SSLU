@@ -21,6 +21,10 @@ class TextDisplay:
                 if self.hist != self.db["choose"]:
                     self.number=1
                 self.hist=self.db["choose"]
+            case "SlimRoom":
+                if self.hist != self.db["slim"]:
+                    self.number=1
+                self.hist=self.db["slim"]
 
     def move_number(self):
         if self.cooldown <= 0 and self.number < len(self.hist):
