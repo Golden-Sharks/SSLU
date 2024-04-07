@@ -5,7 +5,6 @@ import pygame
 from app.modules.player.player import Player
 from app.modules.room.room import Room
 from app.modules.room.roomFactory import RoomFactory
-from app.modules.room.slimRoom import SlimRoom
 from app.modules.room.tutorialRoom import TutorialRoom
 from app.modules.textDisplay.textDisplay import TextDisplay
 
@@ -20,7 +19,7 @@ class Game:
         self.roomFactory = RoomFactory(self)
         self.text = TextDisplay(self, self.get_db())
         self.currentRoom: Room = TutorialRoom(self)
-        self.player = Player(self, [45, self.currentRoom.ground_collider.top+58])
+        self.player = Player(self, [45, self.currentRoom.ground_collider.top + 58])
         self.image = pygame.transform.scale(pygame.image.load("assets/logo_goldenSharks.png"), (200, 200))
 
     def get_db(self):
@@ -49,8 +48,6 @@ class Game:
         self.screen.blit(text_surface_instructions, (260, 500))
 
         pygame.display.update()
-
-
 
     def run(self):
         pygame.display.flip()
