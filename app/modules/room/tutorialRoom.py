@@ -13,6 +13,8 @@ class TutorialRoom(Room):
         self.door = Door(self.game, (865, 252))
         self.text = game.text
 
+    def update(self):
+        pass
     def draw(self):
         self.game.screen.blit(self.background_gradiant, (0, 0))
         self.game.screen.blit(self.background_image, (0, 0))

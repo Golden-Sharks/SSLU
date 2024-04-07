@@ -36,3 +36,6 @@ class RootRoom(Room):
 
     def next_text(self):
         self.text.move_number()
+
+    def update(self):
+        pass

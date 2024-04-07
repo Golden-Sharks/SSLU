@@ -5,6 +5,7 @@ import pygame
 from app.modules.player.player import Player
 from app.modules.room.room import Room
 from app.modules.room.roomFactory import RoomFactory
+from app.modules.room.slimRoom import SlimRoom
 from app.modules.room.tutorialRoom import TutorialRoom
 from app.modules.textDisplay.textDisplay import TextDisplay
 
@@ -27,6 +28,7 @@ class Game:
             return json.load(file)
 
     def update(self, keys):
+        self.currentRoom.update()
         self.player.update(keys)
         self.clock.tick(60)
 
