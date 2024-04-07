@@ -15,9 +15,9 @@ class Player:
         self.direction = "immobile"
         self.cooldown_timer = pygame.time.Clock()
         self.animation = {
-            "immobile": ["sprite_0.png","sprite_0.png"],
-            "marche": ["sprite_1.png","sprite_2.png"],
-            "saut": ["sprite_3.png","sprite_3.png"],
+            "immobile": ["sprite_0.png", "sprite_0.png"],
+            "marche": ["sprite_1.png", "sprite_2.png"],
+            "saut": ["sprite_3.png", "sprite_3.png"],
         }
         self.animation_frame_index = 0
         self.can_move = True
@@ -80,8 +80,8 @@ class Player:
         if self.velocity[0] >= 0:
             scaled_image = pygame.transform.flip(scaled_image, True, False)
         self.game.screen.blit(scaled_image, self.pos)
-        #pygame.draw.rect(self.game.screen, (255, 0, 0), self.collider, 5)
-
+        pygame.draw.rect(self.game.screen, (255, 0, 0), (0, 0, self.remaining_life * 20, 20))
+        # pygame.draw.rect(self.game.screen, (255, 0, 0), self.collider, 5)
 
     def take_damage(self, damage):
         self.remaining_life -= damage
