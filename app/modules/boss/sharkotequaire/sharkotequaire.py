@@ -11,7 +11,8 @@ class Sharkotequaire:
         self.pos = pos
         self.is_attacking = False
         self.sprite = pygame.transform.flip(pygame.transform.scale(
-            pygame.image.load('./assets/environnement/Animations/sharkotequere/sprite_4.png'), (84, 105)), True, False)
+            pygame.image.load('./assets/environnement/Animations/sharkotequere/sharkotecaire.png'), (84, 105)), True,
+            False)
 
         self.bullets = []
         self.can_shot = True
@@ -38,13 +39,13 @@ class Sharkotequaire:
                     self.last_shot_time = time.time()
                     self.bullets.append(LinearBall(self.game, [500, 75], [-1, 1], 8))
                     self.bullets.append(LinearBall(self.game, [700, 75], [1, 1], 10))
-                    self.bullets.append(LinearBall(self.game, [600, 100], [1, 1], 10))
+                    self.bullets.append(LinearBall(self.game, [600, 100], [1, -1], 10))
                 elif self.phase == 3:
                     self.is_attacking = False
                     pass
                 self.can_shot = False
                 self.phase += 1
-            if time.time() - self.last_shot_time > 25:
+            if time.time() - self.last_shot_time > 26:
                 self.can_shot = True
                 self.bullets.clear()
 
