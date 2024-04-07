@@ -11,34 +11,60 @@ class SlimRoom(Room):
         self.background_image = pygame.image.load('./assets/environnement/Map/salle_objets.png')
         self.background_gradiant = pygame.image.load('./assets/environnement/Fonds/water_background.png')
         self.door = Door(self.game, (865, 252))
+        self.text = game.text
         self.monstre_interaction_cooldown = 0
-        #self.text = game.text
+        self.damage_cooldown = 0
         self.monstres = [Shirak(self.game, [500, 356])]
 
     def update(self):
-        #print("before :", self.monstre_interaction_cooldown)
+        self.text.update()
         if self.monstre_interaction_cooldown > 0:
             self.monstre_interaction_cooldown -= self.game.clock.get_time()
             if self.monstre_interaction_cooldown < 0:
                 self.monstre_interaction_cooldown = 0
-        for monstre in self.monstres:
-            monstre.update()
+        if self.damage_cooldown > 0:
+            self.damage_cooldown -= self.game.clock.get_time()
+        if self.damage_cooldown < 0:
+            self.damage_cooldown = 0
+        if self.monstres != None:
+            for monstre in self.monstres:
+                monstre.update()
+
 
 
     def draw(self):
         self.game.screen.blit(self.background_gradiant, (0, 0))
         self.game.screen.blit(self.background_image, (0, 0))
-        #self.text.display_txt()
-        self.monstres[0].draw()
+        self.text.display_txt()
+        if(self.monstres != None):
+            self.monstres[0].draw()
         self.door.draw()
 
     def check_for_interaction(self):
         if self.game.player.collider.colliderect(self.door.collider):
             self.game.roomFactory.switch_room()
-        if self.game.player.collider.colliderect(
-                self.monstres[0].interaction_zone_player) and self.monstre_interaction_cooldown == 0:
-            self.monstre_interaction_cooldown = 300  # Set cooldown to 2 seconds
-            if(self.monstres[0].life<=0):
-                self.monstres = None
-            if(self.monstres!=None):
+        if self.monstres != None:
+            if self.game.player.collider.colliderect(
+                    self.monstres[0].interaction_zone_player) and self.monstre_interaction_cooldown == 0 and self.game.player.status != "Attaque":
+                self.monstre_interaction_cooldown = 300  # Set cooldown to 2 seconds
                 self.monstres[0].interact(self.game.player.status)
+                self.text.update()
+                if (self.game.text.number == 5):
+                    self.monstres = None
+        if self.monstres != None and self.damage_cooldown <= 0:
+            if self.game.player.collider.colliderect(self.monstres[0].interaction_zone_player):
+                self.game.player.take_damage(1)
+                self.damage_cooldown = 100  # Reset damage cooldown
+        if self.monstres == None:
+            self.game.text.current_text = "Tu cours à ta perte!"
+
+    def attack_interaction(self):
+        self.text.update()
+        if self.monstres != None:
+            if self.game.player.collider.colliderect(
+                    self.monstres[0].interaction_zone_player) and self.monstre_interaction_cooldown == 0:
+                self.monstre_interaction_cooldown = 0  # Set cooldown to 2 seconds
+                if (self.monstres[0].life <= 0):
+                    self.monstres = None
+                if (self.monstres != None):
+                    self.monstres[0].interact(self.game.player.status)
