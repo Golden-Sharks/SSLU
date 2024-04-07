@@ -6,7 +6,7 @@ import pygame
 from app.modules.player.player import Player
 from app.modules.room.room import Room
 from app.modules.room.roomFactory import RoomFactory
-from app.modules.room.rootRoom import RootRoom
+from app.modules.room.tutorialRoom import TutorialRoom
 from app.modules.textDisplay.textDisplay import TextDisplay
 
 
@@ -19,7 +19,7 @@ class Game:
         self.running = True
         self.roomFactory = RoomFactory(self)
         self.text = TextDisplay(self, self.get_db())
-        self.currentRoom: Room = RootRoom(self)
+        self.currentRoom: Room = TutorialRoom(self)
         self.player = Player(self, [45, self.currentRoom.ground_collider.top + 58])
         self.image = pygame.transform.scale(pygame.image.load("assets/logo_goldenSharks.png"), (200, 200))
         self.isGameOver = False
@@ -84,13 +84,10 @@ class Game:
     def game_over(self):
         self.isGameOver = True
         self.running = False
+        self.draw_end_screen('Game Over')
 
-    def draw_end_screen(self):
-        if self.isGameOver:
-            texte = "Game Over"
-        elif self.hasWon:
-            texte = "Félicitation"
-        else:
+    def draw_end_screen(self, texte=''):
+        if texte == '':
             pygame.quit()
             sys.exit()
         self.screen.fill((50, 50, 50))

@@ -27,6 +27,7 @@ class Player:
         self.remaining_life = 10
         self.status = "Neutre"
         self.last_damage = 0
+        self.karma = 0
 
     def update(self, keys):
         if self.can_move:
@@ -93,4 +94,4 @@ class Player:
             self.remaining_life -= damage
             if self.remaining_life <= 0:
                 self.game.game_over()
-            print("Player took damage, remaining life: ", self.remaining_life)
+            # print("Player took damage, remaining life: ", self.remaining_life)
