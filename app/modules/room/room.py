@@ -19,3 +19,6 @@ class Room(ABC):
     @abstractmethod
     def update(self):
         pass
+
+    def attack_interaction(self):
+        pass

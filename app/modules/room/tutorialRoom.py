@@ -14,7 +14,7 @@ class TutorialRoom(Room):
         self.text = game.text
 
     def update(self):
-        pass
+        self.text.update()
     def draw(self):
         self.game.screen.blit(self.background_gradiant, (0, 0))
         self.game.screen.blit(self.background_image, (0, 0))
@@ -27,3 +27,6 @@ class TutorialRoom(Room):
 
     def next_text(self):
         self.text.move_number()
+
+    def attack_interaction(self):
+        pass

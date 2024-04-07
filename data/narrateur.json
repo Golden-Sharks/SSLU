@@ -22,18 +22,23 @@
     "4": "Vous feriez mieux de ne pas rester ici trop longtemps."
   },
   "choose": {
-    "1": "Vous avez le choix entre trois destinés.",
-    "2": "Vous pouvez choisir entre une épée, un livre et un oeuf.",
+    "1": "Vous avez le choix entre deux destinés.",
+    "2": "Vous pouvez choisir entre une épée, un livre.",
     "3": "Laquelle choisissez-vous?"
   },
   "slime_epee": {
-    "1": "Ce monstre va essayer de te tuer!!!",
-    "2": "Shark! Shark! Shark!",
-    "3": "Tue le! Vite! Tue le!",
-    "4": "Blurp! Blurp! Blurp!",
-    "5": "Tu sens un pouvoir en toi!",
-    "6": "...",
-    "7": "Tu cours à ta perte!"
+    "1": "Vous apercevez un truc visqueux au milieu de la salle.",
+    "2": "Ce monstre va essayer de te tuer!!!",
+    "3": "Monstre : Shark! Shark! Shark!",
+    "4": "Tue le! Vite! Tue le!",
+    "5": "Monstre : Blurp! Blurp! Blurp!"
+  },
+  "slime_epee_carnage": {
+    "1": "Tu sens un pouvoir en toi!"
+  },
+  "slime_epee_pacific": {
+    "1": "...",
+    "2": "Tu cours à ta perte!"
   },
   "slime_livre": {
     "1": "Vous comprenez ce que le Shirak essaie de vous dire.",
