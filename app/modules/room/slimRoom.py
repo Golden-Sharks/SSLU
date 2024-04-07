@@ -1,7 +1,9 @@
 import pygame
+
 from app.modules.ActionableEntities.Door import Door
-from app.modules.room.room import Room
 from app.modules.monstre.shirak import Shirak
+from app.modules.room.room import Room
+
 
 class SlimRoom(Room):
 
@@ -28,13 +30,13 @@ class SlimRoom(Room):
         if self.monstres != None:
             for monstre in self.monstres:
                 monstre.update()
-
-
+        else:
+            self.game.player.karma = -1
 
     def draw(self):
         self.game.screen.blit(self.background_gradiant, (0, 0))
         self.game.screen.blit(self.background_image, (0, 0))
-        if(self.monstres != None):
+        if (self.monstres != None):
             self.monstres[0].draw()
         self.door.draw()
 
@@ -43,7 +45,8 @@ class SlimRoom(Room):
             self.game.roomFactory.switch_room()
         if self.monstres != None:
             if self.game.player.collider.colliderect(
-                    self.monstres[0].interaction_zone_player) and self.monstre_interaction_cooldown == 0 and self.game.player.status != "Attaque":
+                    self.monstres[
+                        0].interaction_zone_player) and self.monstre_interaction_cooldown == 0 and self.game.player.status != "Attaque":
                 self.monstre_interaction_cooldown = 300  # Set cooldown to 2 seconds
                 self.monstres[0].interact(self.game.player.status)
 

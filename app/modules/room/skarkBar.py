@@ -34,14 +34,19 @@ class Sharkbar(Room):
         if not self.has_played_animation and self.detector.colliderect(self.game.player.collider):
             self.start_fight_animation()
             self.has_played_animation = True
-            self.boss.is_attacking = True
             self.boss.first_attack_time = time.time()
             self.music_player.play('./data/musics/sharkeneger.mp3')
         self.boss.update()
 
+        if self.has_played_animation and not self.boss.is_attacking:
+            self.game.draw_end_screen('Felicitations, vous avez survecu !')
+
     def start_fight_animation(self):
-        print("ANIMATION !")
         self.game.player.can_move = False
-        # TODO: mettre le dialogue mauvais avant le tp
-        self.boss.first_shot_time = time.time()
-        self.game.player.can_move = True
+        if self.game.player.karma < 0:
+            self.game.draw_end_screen(
+                'Felicitation ! Route génocide finie.')
+        else:
+            self.boss.is_attacking = True
+            self.boss.first_shot_time = time.time()
+            self.game.player.can_move = True
