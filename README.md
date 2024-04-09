@@ -30,10 +30,14 @@ Il y a deux boss différents. Si vous déclenchez le combat contre l'un d'eux, i
 ## Détails des routes
 ### Route livre
 **Prérequis** : Choisir le livre dans le deuxième tableau.
+
 **Fin 1** : Vous épargnez le requin/slime dans le troisième tableau, vous échappez donc au combat contre la Sharkotécaire et gagnez.
+
 **Fin 2** : Vous tuez le requin/slime, le combat contre la Sharkotécaire se déclenche.
  
 ### Route épée
 **Prérequis** : Choisir l'épée dans le deuxième tableau.
+
 **Fin 1** : Vous épargnez le requin/slime dans le troisième tableau, vous échappez donc au combat contre Arnault Sharkenegger et gagnez.
+
 **Fin 2** : Vous tuez le requin/slime, le combat contre Arnault Sharkenegger se déclenche.
