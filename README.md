@@ -6,7 +6,7 @@
 - [Thomas le Tarnec](https://github.com/Klemph)
 - Simon Jourdrouin
  
-##Contexte
+## Contexte
 Dans le cadre de la GameJam de l'ESIR édition 2024, nous devions créer un jeu en 39 heures sur le thème "Choose Your End".
  
 ## Pitch du jeu
